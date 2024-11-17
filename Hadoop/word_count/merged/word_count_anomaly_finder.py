@@ -1,6 +1,6 @@
 import pandas as pd
 
-def find_anomalies_in_logs(file_path, fatal_level='FATAL', exception_keyword='exception'):
+def find_anomalies_in_logs(file_path, fatal_level='FATAL', exception_keyword='EXCEPTION'):
     # Read the CSV file into a DataFrame
     df = pd.read_csv(file_path)
 
@@ -30,7 +30,7 @@ def save_cluster_ids(cluster_ids, output_file):
     # Write unique cluster IDs to output file
     with open(output_file, 'w') as file:
         for cluster_id in cluster_ids:
-            file.write(f"{cluster_id}\n")
+            file.write(f"{cluster_id}, ")
 
 # File paths and settings
 file_path = 'parsed-word-count-merged.csv'
