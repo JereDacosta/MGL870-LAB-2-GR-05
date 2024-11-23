@@ -47,7 +47,7 @@ def evaluate_model(y_true, y_pred, model_name, process_time):
 # Main processing
 def main():
     # Load data
-    df = load_and_prepare_data('parsed-word-count-aggregated_3_mins.csv')
+    df = load_and_prepare_data('parsed-word-count-aggregated.csv')
     
     # Split data
     train_df, val_df, test_df = split_data(df)
