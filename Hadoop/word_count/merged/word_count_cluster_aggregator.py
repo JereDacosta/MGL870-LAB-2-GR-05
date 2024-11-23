@@ -24,9 +24,9 @@ def split_and_aggregate_by_cluster(df, time_interval, error_threshold, anomaly_c
 
     return cluster_counts
 
-time_interval = '3T'  # fixed windows of 1 minute intervals
+time_interval = '10T'  # fixed windows of 10 minute intervals
 anomaly_clusters = [243, 249, 252, 261, 262, 267, 90, 92, 110, 182, 184, 216, 218, 233, 244, 246, 247, 250, 259, 263, 270]  # anomalous cluster IDs
-error_threshold = 1  # max number or error before labeling as an anomaly chunk
+error_threshold = 3  # max number or error before labeling as an anomaly chunk
 
 result_df = split_and_aggregate_by_cluster(df, time_interval, error_threshold, anomaly_clusters)
 result_df.reset_index(inplace=True)
